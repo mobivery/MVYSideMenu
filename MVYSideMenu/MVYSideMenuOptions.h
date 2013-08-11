@@ -16,6 +16,6 @@
 @property (nonatomic, assign) CGFloat contentViewOpacity;
 @property (nonatomic, assign) BOOL panFromBezel;
 @property (nonatomic, assign) BOOL panFromNavBar;
-
+@property (nonatomic, assign) CGFloat animationDuration;
 
 @end

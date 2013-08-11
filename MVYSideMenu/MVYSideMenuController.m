@@ -310,7 +310,17 @@ typedef struct {
 	
 	NSTimeInterval duration;
 	if (velocity == 0.0f) {
-		duration = 0.4f;
+        
+        if (self.options.animationDuration == CGFLOAT_MAX) {
+
+            duration = 0.4f;
+            
+        } else {
+            
+            duration = self.options.animationDuration;
+            
+        }
+        
 	} else {
 		duration = fabs(menuXOrigin - finalXOrigin) / velocity;
 		duration = fmax(0.1, fmin(1.0f, duration));
@@ -336,7 +346,17 @@ typedef struct {
 	
 	NSTimeInterval duration;
 	if (velocity == 0.0f) {
-		duration = 0.4f;
+		
+        if (self.options.animationDuration == CGFLOAT_MAX) {
+            
+            duration = 0.4f;
+            
+        } else {
+            
+            duration = self.options.animationDuration;
+            
+        }
+        
 	} else {
 		duration = fabs(menuXOrigin - finalXOrigin) / velocity;
 		duration = fmax(0.1, fmin(1.0f, duration));

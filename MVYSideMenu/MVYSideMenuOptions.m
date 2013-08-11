@@ -18,6 +18,7 @@
 		self.contentViewScale = 0.96f;
 		self.panFromBezel = YES;
 		self.panFromNavBar = YES;
+        _animationDuration = CGFLOAT_MAX;
     }
     
     return self;
@@ -32,6 +33,7 @@
 	options.contentViewScale = self.contentViewScale;
     options.panFromBezel = self.panFromBezel;
 	options.panFromNavBar = self.panFromNavBar;
+    options.animationDuration = self.animationDuration;
 	
     return options;
 }
