@@ -434,8 +434,9 @@ typedef struct {
 - (void)addShadowToMenuView {
 	
 	self.menuContainerView.layer.masksToBounds = NO;
-	self.menuContainerView.layer.shadowOffset = CGSizeMake(8, 0);
-	self.menuContainerView.layer.shadowOpacity = 0.5;
+	self.menuContainerView.layer.shadowOffset = self.options.shadowOffset;
+	self.menuContainerView.layer.shadowOpacity = self.options.shadowOpacity;
+    self.menuContainerView.layer.shadowRadius = self.options.shadowRadius;
 	self.menuContainerView.layer.shadowPath = [[UIBezierPath
                                                  bezierPathWithRect:self.menuContainerView.bounds] CGPath];
 }

@@ -19,6 +19,9 @@
 		_panFromBezel = YES;
 		_panFromNavBar = YES;
         _animationDuration = 0.4f;
+        _shadowOffset = CGSizeMake(8,0);
+        _shadowOpacity = 0.5;
+        _shadowRadius = 3;
     }
     
     return self;
@@ -34,7 +37,9 @@
     options.panFromBezel = self.panFromBezel;
 	options.panFromNavBar = self.panFromNavBar;
     options.animationDuration = self.animationDuration;
-	
+	options.shadowOffset = self.shadowOffset;
+    options.shadowOpacity = self.shadowOpacity;
+    options.shadowRadius = self.shadowRadius;
     return options;
 }
 
