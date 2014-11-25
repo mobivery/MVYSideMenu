@@ -8,9 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, MVYSideMenuOpenDirection) {
+    MVYSideMenuOpenDirectionFromLeft    = 0,
+    MVYSideMenuOpenDirectionFromRight   = 1,
+};
+
 @interface MVYSideMenuOptions : NSObject <NSCopying>
 
 @property (nonatomic, assign) CGFloat menuViewOverlapWidth __attribute__((deprecated("Use menuFrame attribute in MVYSideMenuController instead")));
+
+/** Direction from which the menu will be opened. Default MVYSideMenuOpenDirectionFromLeft. */
+@property (nonatomic, assign) MVYSideMenuOpenDirection openDirection;
 
 /** Pan gesture bezel width in pixel when menu is closed. Default 20.0 */
 @property (nonatomic, assign) CGFloat bezelWidth;

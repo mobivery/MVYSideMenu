@@ -76,4 +76,5 @@
 @interface UIViewController (MVYSideMenuController)
 - (MVYSideMenuController *)sideMenuController;
 - (void)addLeftMenuButtonWithImage:(UIImage *)buttonImage;
+- (void)addRightMenuButtonWithImage:(UIImage *)buttonImage;
 @end
