@@ -9,6 +9,27 @@
 #import <UIKit/UIKit.h>
 #import "MVYSideMenuOptions.h"
 
+@class MVYSideMenuController;
+
+/** A protocol for the MVYSideMenuController delegate */
+@protocol MVYSideMenuControllerDelegate <NSObject>
+
+@optional
+
+/** Called on the delegate when the side menu is about to be opened. */
+- (void)willOpenSideMenuController:(MVYSideMenuController *)sideMenuController;
+
+/** Called on the delegate when the side menu is about to be closed */
+- (void)willCloseSideMenuController:(MVYSideMenuController *)sideMenuController;
+
+/** Called on the delegate when the side menu was opened. */
+- (void)didOpenSideMenuController:(MVYSideMenuController *)sideMenuController;
+
+/** Called on the delegate when the side menu was closed. */
+- (void)didCloseSideMenuController:(MVYSideMenuController *)sideMenuController;
+
+@end
+
 /** View controller that allow  */
 @interface MVYSideMenuController : UIViewController
 
@@ -24,6 +45,9 @@
 /** Frame of menu view, origin.y value will be ignored and setted to 0. Negative values indicates that will fill parent view.
  By default { origin: { x: 0, y: 0 }, size: { width: parentWidth - 60, heigth: -1 }} */
 @property (nonatomic, assign) CGRect menuFrame;
+
+/** MVYSideMenuController delegate */
+@property(nonatomic, assign) id<MVYSideMenuControllerDelegate> delegate;
 
 /** This method create an instance of MVYSideMenuController with default options.
  
@@ -76,4 +100,5 @@
 @interface UIViewController (MVYSideMenuController)
 - (MVYSideMenuController *)sideMenuController;
 - (void)addLeftMenuButtonWithImage:(UIImage *)buttonImage;
+- (void)addRightMenuButtonWithImage:(UIImage *)buttonImage;
 @end
