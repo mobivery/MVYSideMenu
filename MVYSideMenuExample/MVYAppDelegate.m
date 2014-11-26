@@ -12,6 +12,9 @@
 #import "MVYMenuViewController.h"
 #import "MVYContentViewController.h"
 
+@interface MVYAppDelegate () <MVYSideMenuControllerDelegate>
+@end
+
 @implementation MVYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -30,6 +33,7 @@
 																					contentViewController:contentNavigationController
 																								  options:options];
 	sideMenuController.menuFrame = CGRectMake(0, 64.0, 220.0, self.window.bounds.size.height - 64.0);
+    sideMenuController.delegate = self;
 	
 	self.window.rootViewController = sideMenuController;
     [self.window makeKeyAndVisible];
@@ -61,6 +65,28 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - MVYSideMenuControllerDelegate
+
+- (void)willOpenSideMenuController:(MVYSideMenuController *)sideMenuController
+{
+    NSLog(@"Side menu will open.");
+}
+
+- (void)willCloseSideMenuController:(MVYSideMenuController *)sideMenuController
+{
+    NSLog(@"Side menu will close.");
+}
+
+- (void)didOpenSideMenuController:(MVYSideMenuController *)sideMenuController
+{
+    NSLog(@"Side menu was opened.");
+}
+
+- (void)didCloseSideMenuController:(MVYSideMenuController *)sideMenuController
+{
+    NSLog(@"Side menu was closed.");
 }
 
 @end

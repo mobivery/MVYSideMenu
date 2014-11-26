@@ -444,12 +444,19 @@ typedef struct {
 	
 	[self addShadowToMenuView];
 	
+    if ( [self.delegate respondsToSelector:@selector(willOpenSideMenuController:)] ) {
+        [self.delegate willOpenSideMenuController:self];
+    }
+    
 	[UIView animateWithDuration:duration delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
 		self.menuContainerView.frame = frame;
 		self.opacityView.layer.opacity = self.options.contentViewOpacity;
 		[self.contentContainerView setTransform:CGAffineTransformMakeScale(self.options.contentViewScale, self.options.contentViewScale)];
 	} completion:^(BOOL finished) {
 		[self disableContentInteraction];
+        if ( [self.delegate respondsToSelector:@selector(didOpenSideMenuController:)] ) {
+            [self.delegate didOpenSideMenuController:self];
+        }
 	}];
 }
 
@@ -469,6 +476,10 @@ typedef struct {
 		duration = fmax(0.1, fmin(1.0f, duration));
 	}
 	
+    if ( [self.delegate respondsToSelector:@selector(willCloseSideMenuController:)] ) {
+        [self.delegate willCloseSideMenuController:self];
+    }
+    
 	[UIView animateWithDuration:duration delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
 		self.menuContainerView.frame = frame;
 		self.opacityView.layer.opacity = 0.0f;
@@ -476,6 +487,9 @@ typedef struct {
 	} completion:^(BOOL finished) {
 		[self removeMenuShadow];
 		[self enableContentInteraction];
+        if ( [self.delegate respondsToSelector:@selector(didCloseSideMenuController:)] ) {
+            [self.delegate didCloseSideMenuController:self];
+        }
 	}];
 }
 
