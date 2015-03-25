@@ -55,7 +55,7 @@
 	static NSString *cellIdentifier = @"MenuCell";
 	
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-	
+    cell.backgroundColor = [UIColor clearColor];
 	NSString *item = [self.menuItems objectAtIndex:indexPath.row];
 	[cell.textLabel setText:item];
 	
@@ -66,6 +66,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 	MVYContentViewController *contentVC = [[MVYContentViewController alloc] initWithNibName:@"MVYContentViewController" bundle:nil];
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:contentVC];
 	[[self sideMenuController] changeContentViewController:navigationController closeMenu:YES];
