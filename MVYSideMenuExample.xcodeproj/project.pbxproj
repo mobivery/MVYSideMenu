@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3841358917E7B48E006BEEFF /* menu_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3841358717E7B48E006BEEFF /* menu_icon@2x.png */; };
+		A54A0D861AC2CB340066CFAA /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54A0D851AC2CB340066CFAA /* CoreImage.framework */; };
 		C2ABB3D2178D680E0041CAF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ABB3D1178D680E0041CAF1 /* UIKit.framework */; };
 		C2ABB3D4178D680E0041CAF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ABB3D3178D680E0041CAF1 /* Foundation.framework */; };
 		C2ABB3D6178D680E0041CAF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2ABB3D5178D680E0041CAF1 /* CoreGraphics.framework */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		3841358717E7B48E006BEEFF /* menu_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_icon@2x.png"; sourceTree = "<group>"; };
+		A54A0D851AC2CB340066CFAA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		C2ABB3CE178D680E0041CAF1 /* MVYSideMenuExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVYSideMenuExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2ABB3D1178D680E0041CAF1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C2ABB3D3178D680E0041CAF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A54A0D861AC2CB340066CFAA /* CoreImage.framework in Frameworks */,
 				C2ABB3D2178D680E0041CAF1 /* UIKit.framework in Frameworks */,
 				C2ABB3D4178D680E0041CAF1 /* Foundation.framework in Frameworks */,
 				C2ABB3D6178D680E0041CAF1 /* CoreGraphics.framework in Frameworks */,
@@ -103,6 +106,7 @@
 		C2ABB3D0178D680E0041CAF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A54A0D851AC2CB340066CFAA /* CoreImage.framework */,
 				C2ABB3D1178D680E0041CAF1 /* UIKit.framework */,
 				C2ABB3D3178D680E0041CAF1 /* Foundation.framework */,
 				C2ABB3D5178D680E0041CAF1 /* CoreGraphics.framework */,

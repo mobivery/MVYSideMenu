@@ -39,4 +39,6 @@
 /** Open/close animation duration in seconds. Default 0.4 */
 @property (nonatomic, assign) CGFloat animationDuration;
 
+/** Blur background radius. Default 10px set to 0 to deactivate */
+@property (nonatomic, assign) CGFloat blurRadius;
 @end
