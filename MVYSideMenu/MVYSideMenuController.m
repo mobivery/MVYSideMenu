@@ -402,8 +402,8 @@ typedef struct {
 	}
 	
 	[self addShadowToMenuView];
-	
 	[UIView animateWithDuration:duration delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.menuViewController viewWillAppear:YES];
 		self.menuContainerView.frame = frame;
 		self.opacityView.layer.opacity = self.options.contentViewOpacity;
 		[self.contentContainerView setTransform:CGAffineTransformMakeScale(self.options.contentViewScale, self.options.contentViewScale)];
@@ -429,6 +429,7 @@ typedef struct {
 	}
 	
 	[UIView animateWithDuration:duration delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.menuViewController viewWillDisappear:YES];
 		self.menuContainerView.frame = frame;
 		self.opacityView.layer.opacity = 0.0f;
 		[self.contentContainerView setTransform:CGAffineTransformMakeScale(1.0, 1.0)];
